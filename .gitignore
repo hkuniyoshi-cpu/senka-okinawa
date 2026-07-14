@@ -1,0 +1,5 @@
+scripts/
+*.gs
+README-DEPLOY.md
+.DS_Store
+Thumbs.db
