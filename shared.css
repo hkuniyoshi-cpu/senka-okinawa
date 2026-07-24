@@ -210,7 +210,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: transp
 .hero-photo-bg.visible { opacity: 1; }
 .hero-photo-bg::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(120deg, rgba(214,154,166,.28) 0%, rgba(168,185,157,.18) 55%, rgba(251,245,241,.35) 100%);
+  background:
+    linear-gradient(90deg, rgba(251,245,241,.85) 0%, rgba(251,245,241,.55) 45%, rgba(251,245,241,.15) 75%, rgba(251,245,241,.05) 100%),
+    linear-gradient(180deg, rgba(184,120,130,.15) 0%, rgba(125,143,112,.08) 100%);
 }
 .hero-blob-1, .hero-blob-2 {
   position: absolute; z-index: 1;
@@ -263,6 +265,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: transp
   letter-spacing: .04em;
   color: var(--ink);
   margin-bottom: 22px;
+  text-shadow: 0 1px 2px rgba(251,245,241,.7), 0 0 20px rgba(251,245,241,.6);
 }
 .hero-title .accent {
   color: var(--rose-deep);
@@ -285,10 +288,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: transp
 }
 .hero-sub {
   font-size: clamp(14px, 1.8vw, 16px);
-  color: var(--ink-soft);
-  line-height: 1.95; font-weight: 500;
+  color: var(--ink);
+  line-height: 1.95; font-weight: 600;
   max-width: 620px;
   margin-bottom: 36px;
+  text-shadow: 0 1px 2px rgba(251,245,241,.75);
 }
 .hero-ctas {
   display: flex; flex-wrap: wrap; gap: 14px;
@@ -333,8 +337,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: transp
 }
 .hero-meta {
   display: flex; flex-wrap: wrap; gap: 24px;
-  font-size: 12px; color: var(--ink-soft);
-  letter-spacing: .1em;
+  font-size: 12px; color: var(--ink);
+  letter-spacing: .1em; font-weight: 600;
+  text-shadow: 0 1px 2px rgba(251,245,241,.75);
 }
 .hero-meta span { display: flex; align-items: center; gap: 6px; }
 .hero-meta .dot { width: 5px; height: 5px; background: var(--sage-deep); border-radius: 50%; }
