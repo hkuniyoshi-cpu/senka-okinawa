@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyFa" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF5F1"/>
+      <stop offset="1" stop-color="#F0E4DD"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#skyFa)"/>
+  <!-- ground / warm carpet feel -->
+  <path d="M0 240 L400 240 L400 300 L0 300 Z" fill="#E5D5C8" opacity="0.6"/>
+  <!-- soft window frame background (indoor scene) -->
+  <g stroke="#3E2C2A" stroke-width="1.8" fill="none" opacity="0.55">
+    <rect x="40" y="40" width="150" height="130" rx="4"/>
+    <line x1="115" y1="40" x2="115" y2="170"/>
+    <line x1="40" y1="105" x2="190" y2="105"/>
+  </g>
+  <!-- sun through window -->
+  <circle cx="112" cy="72" r="14" fill="#E8B5BF" opacity="0.55"/>
+  <!-- bookshelf / picture book library reference -->
+  <g stroke="#3E2C2A" stroke-width="1.8" stroke-linejoin="round">
+    <rect x="230" y="140" width="130" height="100" fill="#FBF5F1"/>
+    <line x1="230" y1="170" x2="360" y2="170"/>
+    <line x1="230" y1="205" x2="360" y2="205"/>
+  </g>
+  <!-- books (colorful sage + rose) -->
+  <g stroke="#3E2C2A" stroke-width="1.2">
+    <rect x="238" y="145" width="10" height="25" fill="#D69AA6"/>
+    <rect x="252" y="145" width="10" height="25" fill="#A8B99D"/>
+    <rect x="266" y="148" width="10" height="22" fill="#E8B5BF"/>
+    <rect x="280" y="145" width="10" height="25" fill="#B8927F"/>
+    <rect x="294" y="150" width="10" height="20" fill="#D69AA6"/>
+    <rect x="308" y="145" width="10" height="25" fill="#A8B99D"/>
+    <rect x="322" y="148" width="10" height="22" fill="#D69AA6"/>
+    <rect x="336" y="145" width="12" height="25" fill="#B8927F"/>
+
+    <rect x="240" y="178" width="12" height="27" fill="#A8B99D"/>
+    <rect x="255" y="180" width="10" height="25" fill="#D69AA6"/>
+    <rect x="268" y="178" width="10" height="27" fill="#E8B5BF"/>
+    <rect x="281" y="180" width="12" height="25" fill="#A8B99D"/>
+    <rect x="296" y="178" width="10" height="27" fill="#D69AA6"/>
+    <rect x="310" y="180" width="10" height="25" fill="#B8927F"/>
+    <rect x="323" y="178" width="12" height="27" fill="#A8B99D"/>
+    <rect x="339" y="182" width="10" height="23" fill="#D69AA6"/>
+  </g>
+  <!-- parent + child figures reading together -->
+  <g fill="#3E2C2A">
+    <!-- parent (sitting) -->
+    <circle cx="130" cy="200" r="9"/>
+    <path d="M118 214 Q118 232, 125 245 L152 245 Q158 232, 156 214 Z"/>
+    <!-- child (smaller, sitting next to parent) -->
+    <circle cx="158" cy="212" r="6.5"/>
+    <path d="M150 222 Q150 235, 154 245 L172 245 Q176 235, 174 222 Z"/>
+  </g>
+  <!-- open book between them (rose accent) -->
+  <g stroke="#3E2C2A" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M125 230 L155 225 L155 245 L125 245 Z" fill="#FBF5F1"/>
+    <path d="M155 225 L180 230 L180 245 L155 245 Z" fill="#FBF5F1"/>
+    <line x1="155" y1="225" x2="155" y2="245"/>
+    <line x1="130" y1="235" x2="150" y2="232" stroke-width="0.8" opacity="0.6"/>
+    <line x1="130" y1="240" x2="148" y2="238" stroke-width="0.8" opacity="0.6"/>
+    <line x1="160" y1="232" x2="175" y2="234" stroke-width="0.8" opacity="0.6"/>
+    <line x1="160" y1="238" x2="175" y2="240" stroke-width="0.8" opacity="0.6"/>
+  </g>
+  <!-- heart above parent+child -->
+  <path d="M145 172 C141 167, 133 167, 133 173 C133 179, 145 187, 145 187 C145 187, 157 179, 157 173 C157 167, 149 167, 145 172 Z" fill="#D69AA6" opacity="0.8"/>
+  <!-- soft floating petals -->
+  <g fill="#E8B5BF" opacity="0.5">
+    <circle cx="210" cy="70" r="2"/>
+    <circle cx="220" cy="90" r="2.5"/>
+    <circle cx="200" cy="105" r="2"/>
+  </g>
+</svg>

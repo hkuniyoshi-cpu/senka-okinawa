@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyO" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF5F1"/>
+      <stop offset="1" stop-color="#EFE1D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#skyO)"/>
+  <!-- ground -->
+  <path d="M0 250 L400 250 L400 300 L0 300 Z" fill="#D9C9BE" opacity="0.55"/>
+  <!-- apartment building -->
+  <g stroke="#3E2C2A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="180" y="90" width="140" height="160" fill="#FBF5F1"/>
+    <!-- top edge -->
+    <path d="M175 90 L325 90" stroke-width="2.4"/>
+    <!-- side accent strip (rose) -->
+    <rect x="180" y="90" width="6" height="160" fill="#D69AA6" fill-opacity="0.65"/>
+  </g>
+  <!-- windows in grid -->
+  <g fill="#F5EAE1" stroke="#3E2C2A" stroke-width="1">
+    <!-- floor 1 -->
+    <rect x="200" y="105" width="24" height="24"/>
+    <rect x="234" y="105" width="24" height="24"/>
+    <rect x="268" y="105" width="24" height="24"/>
+    <rect x="302" y="105" width="14" height="24"/>
+    <!-- floor 2 -->
+    <rect x="200" y="140" width="24" height="24"/>
+    <rect x="234" y="140" width="24" height="24" fill="#D69AA6" fill-opacity="0.35"/>
+    <rect x="268" y="140" width="24" height="24"/>
+    <rect x="302" y="140" width="14" height="24"/>
+    <!-- floor 3 -->
+    <rect x="200" y="175" width="24" height="24" fill="#A8B99D" fill-opacity="0.35"/>
+    <rect x="234" y="175" width="24" height="24"/>
+    <rect x="268" y="175" width="24" height="24"/>
+    <rect x="302" y="175" width="14" height="24" fill="#D69AA6" fill-opacity="0.35"/>
+    <!-- ground floor - entrance -->
+    <rect x="240" y="215" width="30" height="35" fill="#A8B99D" fill-opacity="0.4"/>
+    <line x1="255" y1="215" x2="255" y2="250"/>
+    <rect x="200" y="220" width="24" height="30"/>
+    <rect x="280" y="220" width="36" height="30"/>
+  </g>
+  <!-- welcome plate (rose) -->
+  <rect x="285" y="98" width="30" height="8" fill="#D69AA6" opacity="0.9"/>
+  <!-- key on ring (large, gold-ish rose - management handoff) -->
+  <g stroke="#3E2C2A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- key ring -->
+    <circle cx="70" cy="140" r="22" stroke-width="2.2"/>
+    <!-- key shaft -->
+    <line x1="92" y1="140" x2="145" y2="140" stroke-width="2.4"/>
+    <!-- key teeth -->
+    <line x1="130" y1="140" x2="130" y2="150"/>
+    <line x1="140" y1="140" x2="140" y2="152"/>
+    <!-- ring highlight -->
+    <circle cx="70" cy="140" r="14" fill="#D69AA6" fill-opacity="0.4" stroke="none"/>
+  </g>
+  <!-- hand-off arrow (rose) -->
+  <g stroke="#D69AA6" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M155 145 Q170 148, 185 155"/>
+    <path d="M178 149 L185 155 L179 162"/>
+  </g>
+  <!-- "お任せ" text hint above key -->
+  <text x="75" y="105" text-anchor="middle" font-family="'Caveat', cursive" font-size="17" fill="#B8747E" font-style="italic">management</text>
+  <!-- soft accents -->
+  <g fill="#A8B99D" opacity="0.55">
+    <circle cx="60" cy="220" r="4"/>
+    <circle cx="72" cy="230" r="3"/>
+    <circle cx="120" cy="230" r="3"/>
+    <circle cx="135" cy="240" r="4"/>
+    <circle cx="360" cy="235" r="4"/>
+    <circle cx="345" cy="245" r="3"/>
+  </g>
+  <!-- sun -->
+  <circle cx="360" cy="55" r="20" fill="#E8B5BF" opacity="0.55"/>
+  <circle cx="360" cy="55" r="20" fill="none" stroke="#D69AA6" stroke-width="1.2" opacity="0.6"/>
+</svg>

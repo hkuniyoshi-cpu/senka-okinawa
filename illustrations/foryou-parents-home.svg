@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF5F1"/>
+      <stop offset="1" stop-color="#F0E4DD"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#skyP)"/>
+  <!-- ground -->
+  <path d="M0 250 L400 250 L400 300 L0 300 Z" fill="#D9C9BE" opacity="0.55"/>
+  <!-- sun -->
+  <circle cx="70" cy="60" r="24" fill="none" stroke="#D69AA6" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="70" cy="60" r="15" fill="#E8B5BF" opacity="0.55"/>
+  <!-- traditional Japanese house (parents' home) -->
+  <g stroke="#3E2C2A" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <!-- house body -->
+    <rect x="130" y="185" width="180" height="65" fill="#FBF5F1"/>
+    <!-- traditional wide roof -->
+    <path d="M110 185 L220 130 L330 185 Z" fill="#A8B99D" stroke-linejoin="round"/>
+    <path d="M110 185 L110 195 L330 195 L330 185" stroke-width="1.8"/>
+    <!-- roof ridge -->
+    <path d="M110 185 L330 185" stroke-width="2.4"/>
+    <!-- shoji sliding doors -->
+    <rect x="150" y="205" width="70" height="45" fill="none"/>
+    <line x1="185" y1="205" x2="185" y2="250"/>
+    <line x1="150" y1="227" x2="220" y2="227"/>
+    <!-- window (right) -->
+    <rect x="240" y="205" width="55" height="30" fill="#F5EAE1"/>
+    <line x1="240" y1="220" x2="295" y2="220"/>
+    <line x1="267" y1="205" x2="267" y2="235"/>
+  </g>
+  <!-- sakura tree (memories) -->
+  <g stroke="#3E2C2A" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M50 250 Q52 220, 55 195 Q58 180, 62 172"/>
+    <path d="M55 205 Q45 195, 38 190"/>
+    <path d="M60 190 Q68 180, 75 178"/>
+    <path d="M62 178 Q56 168, 52 160"/>
+  </g>
+  <!-- sakura blossoms (dusty rose) -->
+  <g fill="#D69AA6" opacity="0.85">
+    <circle cx="38" cy="188" r="6"/>
+    <circle cx="45" cy="200" r="4"/>
+    <circle cx="75" cy="176" r="6"/>
+    <circle cx="65" cy="168" r="5"/>
+    <circle cx="52" cy="160" r="5"/>
+    <circle cx="80" cy="188" r="4"/>
+    <circle cx="42" cy="175" r="4"/>
+  </g>
+  <!-- falling petals -->
+  <g fill="#E8B5BF" opacity="0.7">
+    <circle cx="100" cy="210" r="2"/>
+    <circle cx="115" cy="230" r="2"/>
+    <circle cx="130" cy="215" r="1.8"/>
+    <circle cx="95" cy="240" r="1.8"/>
+  </g>
+  <!-- soft heart above house (memories) -->
+  <path d="M220 100 C216 95, 208 95, 208 101 C208 107, 220 115, 220 115 C220 115, 232 107, 232 101 C232 95, 224 95, 220 100 Z" fill="#D69AA6" opacity="0.55"/>
+</svg>

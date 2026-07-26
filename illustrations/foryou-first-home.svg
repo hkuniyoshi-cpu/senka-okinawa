@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="skyF" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF5F1"/>
+      <stop offset="1" stop-color="#F2E5DE"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#skyF)"/>
+  <!-- ground -->
+  <path d="M0 250 L400 250 L400 300 L0 300 Z" fill="#D9C9BE" opacity="0.55"/>
+  <!-- apartment (left, small — current rental) -->
+  <g stroke="#3E2C2A" stroke-width="1.8" stroke-linejoin="round">
+    <rect x="40" y="170" width="80" height="80" fill="#F5EAE1"/>
+    <path d="M40 170 L80 155 L120 170" fill="#B8927F" stroke-width="1.6"/>
+  </g>
+  <g fill="#3E2C2A" opacity="0.7">
+    <rect x="52" y="185" width="12" height="14"/>
+    <rect x="72" y="185" width="12" height="14"/>
+    <rect x="92" y="185" width="12" height="14"/>
+    <rect x="52" y="210" width="12" height="14"/>
+    <rect x="72" y="210" width="12" height="14"/>
+    <rect x="92" y="210" width="12" height="14"/>
+    <rect x="72" y="235" width="16" height="15" fill="#A8B99D"/>
+  </g>
+  <!-- arrow (transition, rose) -->
+  <g stroke="#D69AA6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M140 200 Q180 175, 220 200"/>
+    <path d="M212 195 L220 200 L215 208"/>
+  </g>
+  <!-- text hint above arrow -->
+  <text x="180" y="165" text-anchor="middle" font-family="'Caveat', cursive" font-size="18" fill="#D69AA6" font-style="italic">first step</text>
+  <!-- new house (right, larger, dream home) -->
+  <g stroke="#3E2C2A" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M240 250 L240 175 L305 130 L370 175 L370 250 Z" fill="#FBF5F1"/>
+    <path d="M240 175 L305 130 L370 175" stroke-width="2.4" fill="#D69AA6" fill-opacity="0.35"/>
+    <!-- door -->
+    <rect x="290" y="200" width="30" height="50" fill="#A8B99D" fill-opacity="0.35"/>
+    <circle cx="313" cy="225" r="1.6" fill="#3E2C2A"/>
+    <!-- windows -->
+    <rect x="252" y="185" width="24" height="22" fill="#F5EAE1"/>
+    <line x1="264" y1="185" x2="264" y2="207"/>
+    <line x1="252" y1="196" x2="276" y2="196"/>
+    <rect x="334" y="185" width="24" height="22" fill="#F5EAE1"/>
+    <line x1="346" y1="185" x2="346" y2="207"/>
+    <line x1="334" y1="196" x2="358" y2="196"/>
+  </g>
+  <!-- sakura petals for warmth -->
+  <g fill="#D69AA6" opacity="0.6">
+    <circle cx="180" cy="80" r="2"/>
+    <circle cx="200" cy="70" r="2.5"/>
+    <circle cx="215" cy="90" r="2"/>
+    <circle cx="340" cy="80" r="2"/>
+    <circle cx="360" cy="105" r="2"/>
+  </g>
+  <!-- ground grass (sage) -->
+  <g stroke="#A8B99D" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M155 250 Q157 245, 155 240"/>
+    <path d="M160 250 Q162 244, 160 238"/>
+    <path d="M225 250 Q227 245, 225 240"/>
+    <path d="M232 250 Q234 244, 232 238"/>
+  </g>
+</svg>

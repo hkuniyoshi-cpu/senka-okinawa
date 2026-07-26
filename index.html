@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="./shared.css">
+<link rel="stylesheet" href="./shared.css?v=2">
 <meta name="google-site-verification" content="LZg90oxtbqi0v6An7Fc0uO3ufbqcmW4_Qp9mCI2u6wk" />
 
 <!-- JSON-LD -->
@@ -619,17 +619,27 @@ function applyForYou(items) {
   if (!Array.isArray(items) || !items.length) return;
   const wrap = document.getElementById('scenes');
   if (!wrap) return;
-  wrap.innerHTML = items.map(f =>
-    `<article class="scene">
-       <div class="scene-img">
-         ${f.image ? `<img src="${esc(driveImg(f.image))}" alt="${esc(f.label || '')}" loading="lazy">` : ''}
+  const illust = {
+    'for 40 - 50s': '/illustrations/foryou-parents-home.svg',
+    'for 20 - 30s': '/illustrations/foryou-first-home.svg',
+    'for family'  : '/illustrations/foryou-family.svg',
+    'for owners'  : '/illustrations/foryou-owner.svg',
+  };
+  wrap.innerHTML = items.map(f => {
+    const key = String(f.label || '').trim().toLowerCase();
+    const illustKey = Object.keys(illust).find(k => k.toLowerCase() === key);
+    const imgSrc = f.image ? driveImg(f.image) : (illustKey ? illust[illustKey] : '');
+    const illustCls = (!f.image && illustKey) ? ' scene-img--illust' : '';
+    return `<article class="scene">
+       <div class="scene-img${illustCls}">
+         ${imgSrc ? `<img src="${esc(imgSrc)}" alt="${esc(f.label || '')}" loading="lazy">` : ''}
        </div>
        <div class="scene-body">
          <span class="scene-label">${esc(f.label || '')}</span>
          <p class="scene-caption">${esc(f.caption || '')}</p>
        </div>
-     </article>`
-  ).join('');
+     </article>`;
+  }).join('');
   observe(wrap, '.scene');
 }
 
