@@ -1327,9 +1327,37 @@ footer {
   .hero { padding: 100px 0 60px; }
   .hero-title { font-size: clamp(30px, 8vw, 40px); }
   .hero-ctas .btn { flex: 1 1 100%; min-width: unset; }
-  .menu-grid { grid-template-columns: 1fr; }
-  .features-list { grid-template-columns: 1fr; }
-  .scenes { grid-template-columns: 1fr; }
+
+  /* Horizontal swipe carousel for card-style sections on mobile */
+  .menu-grid,
+  .features-list,
+  .scenes,
+  .consult-cards,
+  .recruit-perks {
+    display: flex; flex-wrap: nowrap;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px; padding: 0 2px 20px;
+    scrollbar-width: none;
+    grid-template-columns: unset;
+  }
+  .menu-grid::-webkit-scrollbar,
+  .features-list::-webkit-scrollbar,
+  .scenes::-webkit-scrollbar,
+  .consult-cards::-webkit-scrollbar,
+  .recruit-perks::-webkit-scrollbar { display: none; }
+
+  .menu-card, .menu-skel,
+  .feature,
+  .scene,
+  .consult-card,
+  .perk {
+    flex: 0 0 78vw; max-width: 300px;
+    scroll-snap-align: start;
+    min-width: 0;
+  }
+  .scene { flex: 0 0 66vw; max-width: 260px; }
+  .perk  { flex: 0 0 72vw; max-width: 280px; }
 
   /* Reviews — horizontal scroll */
   .reviews-grid {
