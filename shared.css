@@ -371,6 +371,11 @@ section { padding: 100px 0; position: relative; }
   line-height: 1.35;
   margin-bottom: 10px;
 }
+/* Mobile-only line break utility */
+.br-sp { display: none; }
+@media (max-width: 600px) {
+  .br-sp { display: inline; }
+}
 .section-subtitle {
   font-size: 13px;
   color: var(--ink-soft);
