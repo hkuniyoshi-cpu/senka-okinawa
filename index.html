@@ -76,6 +76,14 @@
 </head>
 <body>
 
+<!-- Emergency kill-switch: even if the main script errors, remove door after 6s -->
+<script>
+setTimeout(function(){
+  var d = document.getElementById('doorScene');
+  if (d && d.parentNode) { d.parentNode.removeChild(d); }
+}, 6000);
+</script>
+
 <!-- ===== 初回訪問ドア開き 演出 (JSで即座に有効性判定) ===== -->
 <div id="doorScene" aria-hidden="true">
   <button type="button" class="door-skip" id="doorSkip">skip &nbsp;→</button>
@@ -452,9 +460,13 @@ function _hideLoader() {
   const wait = Math.max(0, 700 - (Date.now() - _loaderStart));
   setTimeout(() => {
     el.classList.add('fade-out');
-    setTimeout(() => el.remove(), 650);
+    setTimeout(() => { if (el && el.parentNode) el.parentNode.removeChild(el); }, 650);
   }, wait);
 }
+// HARD CAP: always hide loader within 2 seconds regardless of CMS speed
+// (GAS Web App cold starts can take 5-7s; skeleton loaders + reveal animation
+//  fill the gap while data streams in)
+setTimeout(_hideLoader, 2000);
 
 /* ============================================================
    3D演出 [1/2] : 初回訪問ドア開き (CSS 3D)
@@ -463,33 +475,39 @@ function _hideLoader() {
   const KEY_DOOR = 'senka_door_seen_v1';
   const el = document.getElementById('doorScene');
   if (!el) return;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const alreadySeen = (function(){ try { return !!localStorage.getItem(KEY_DOOR); } catch(e){ return false; } })();
+  // FAILSAFE: any error / animation glitch → force-remove after 5s
+  const failsafeTimer = setTimeout(() => {
+    if (el && el.parentNode) el.remove();
+    try { localStorage.setItem(KEY_DOOR, '1'); } catch(e){}
+  }, 5000);
+  let reducedMotion = false, alreadySeen = false;
+  try {
+    reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    alreadySeen = !!localStorage.getItem(KEY_DOOR);
+  } catch(e){}
   if (reducedMotion || alreadySeen) {
+    clearTimeout(failsafeTimer);
     el.remove();
     return;
   }
-  // Hide the SENKA logo page-loader during door intro (door already welcomes)
-  const pl = document.getElementById('page-loader');
-  if (pl) { pl.style.display = 'none'; pl.dataset.done = '1'; }
-  document.body.style.overflow = 'hidden';
   function closeAndReveal() {
+    clearTimeout(failsafeTimer);
     if (el.dataset.closed) return;
     el.dataset.closed = '1';
     el.classList.add('closing');
     setTimeout(() => {
-      el.remove();
-      document.body.style.overflow = '';
+      if (el && el.parentNode) el.remove();
       try { localStorage.setItem(KEY_DOOR, '1'); } catch(e){}
     }, 900);
   }
-  // Skip button
+  // Skip button + click-anywhere-to-skip
   const skip = document.getElementById('doorSkip');
   if (skip) skip.addEventListener('click', closeAndReveal);
-  // Auto-play sequence
+  el.addEventListener('click', closeAndReveal);
+  // Auto-play sequence — total ~2.8s (was 3.2s)
   requestAnimationFrame(() => {
-    setTimeout(() => el.classList.add('opening'), 750);   // doors open
-    setTimeout(closeAndReveal, 3200);                     // fade + reveal hero
+    setTimeout(() => el.classList.add('opening'), 600);
+    setTimeout(closeAndReveal, 2800);
   });
 })();
 
